@@ -3,6 +3,6 @@ package media;
 public class AudioMixer {
 
     public int mixChannels(String targetFormat) {
-        return 2;
+        return targetFormat.equalsIgnoreCase("amr") ? 1 : 2; // amr is mono
     }
 }

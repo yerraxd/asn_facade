@@ -9,11 +9,14 @@ public class MediaConversionFacade {
 
     public String convert(String fileName, String targetFormat) {
         metadataReader.readFormat(fileName);
+        int duration = metadataReader.readDurationSec(fileName);
         String codec = codecFactory.getCodec(targetFormat);
         int bitrate = bitrateReader.getBitrateKbps(targetFormat);
         int channels = audioMixer.mixChannels(targetFormat);
+        long sizeKb = bitrateReader.estimateSizeKb(duration, bitrate);
 
         String outputName = fileName.substring(0, fileName.lastIndexOf('.')) + "." + targetFormat;
-        return outputName + " [" + codec + ", " + bitrate + " kbps, " + channels + " ch]";
+        return outputName + " [" + codec + ", " + bitrate + " kbps, "
+                + channels + " ch, ~" + sizeKb + " KB]";
     }
 }

@@ -14,4 +14,7 @@ public class MetadataReader {
         }
         return format;
     }
+    public int readDurationSec(String fileName) {
+        return 120 + fileName.length() * 5; // simulated
+    }
 }
