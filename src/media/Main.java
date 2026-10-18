@@ -19,4 +19,10 @@ public class Main {
             System.out.println("FAIL " + e.getMessage());
         }
     }
+
+    public static class UnsupportedFormatException extends RuntimeException {
+        public UnsupportedFormatException(String message) {
+            super(message);
+        }
+    }
 }
