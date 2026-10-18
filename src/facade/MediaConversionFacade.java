@@ -1,4 +1,9 @@
-package media;
+package facade;
+
+import media.AudioMixer;
+import media.BitrateReader;
+import media.CodecFactory;
+import media.MetadataReader;
 
 public class MediaConversionFacade {
 
