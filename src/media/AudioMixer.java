@@ -1,6 +1,6 @@
 package media;
 
-public class audioMixer {
+public class AudioMixer {
 
     public int mixChannels(String targetFormat) {
         System.out.println("Mixing to stereo");

@@ -4,6 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
         MediaConversionFacade converter = new MediaConversionFacade();
-        System.out.println(converter.convert("podcast.wav", "mp3"));
+        run(converter, "podcast.wav", "mp3");
+        run(converter, "track.mp3", "xyz");
+    }
+
+    private static void run(MediaConversionFacade converter, String file, String format) {
+        try {
+            System.out.println("OK   " + converter.convert(file, format));
+        } catch (UnsupportedFormatException e) {
+            System.out.println("FAIL " + e.getMessage());
+        }
     }
 }
