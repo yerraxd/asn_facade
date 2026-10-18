@@ -6,6 +6,7 @@ public class Main {
         MediaConversionFacade converter = new MediaConversionFacade();
         run(converter, "podcast.wav", "mp3");
         run(converter, "track.mp3", "xyz");
+        run(converter, "voice.txt", "mp3");
     }
 
     private static void run(MediaConversionFacade converter, String file, String format) {
